@@ -51,4 +51,9 @@ public class AccountController {
     public ResponseEntity<AccountResponse> withdrawByAccountId(@PathVariable Long id, @RequestParam Long withdrawAmount){
         return new ResponseEntity<>(accountService.withdrawByAccountId(id, withdrawAmount), HttpStatus.OK);
     }
+
+    @DeleteMapping ("/delete/{id}")
+    public ResponseEntity<String> deleteById(@PathVariable Long id){
+        return new ResponseEntity<>(accountService.deleteAccount(id),HttpStatus.OK);
+    }
 }

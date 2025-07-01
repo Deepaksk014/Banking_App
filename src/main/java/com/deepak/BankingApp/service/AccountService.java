@@ -17,4 +17,6 @@ public interface AccountService {
     List<AccountDto> GetAllAccountDetails ();
 
     AccountResponse withdrawByAccountId (Long id, Long withdrawAmount);
+
+    String deleteAccount ( Long id);
 }

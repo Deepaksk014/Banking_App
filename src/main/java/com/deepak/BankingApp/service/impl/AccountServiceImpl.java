@@ -78,4 +78,13 @@ public class AccountServiceImpl implements AccountService  {
         }
 
     }
+
+    @Override
+    public String deleteAccount(Long id) {
+        Account account = accountRepository.findById(id).orElseThrow(()-> new RuntimeException("Account not found."));
+
+                accountRepository.delete(account);
+
+        return "account deleted successfully";
+    }
 }
